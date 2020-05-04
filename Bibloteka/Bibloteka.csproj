@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30357694-3E80-4F82-BB80-4C5844F105E9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bibloteka</RootNamespace>
+    <AssemblyName>Bibloteka</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.v12.12.0.0.0\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Reporting, Version=14.0.20.115, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.ReportViewer.WinForms, Version=14.0.20.115, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="zxing, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="controllers\ElektronikControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\ElektronikControl1.Designer.cs">
+      <DependentUpon>ElektronikControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\FizikControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\FizikControl1.Designer.cs">
+      <DependentUpon>FizikControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\KimiControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\KimiControl1.Designer.cs">
+      <DependentUpon>KimiControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\lexuesi\lexuesShowData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\lexuesi\lexuesShowData.Designer.cs">
+      <DependentUpon>lexuesShowData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\lexuesi\showLibra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\lexuesi\showLibra.Designer.cs">
+      <DependentUpon>showLibra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\mainMenaxherControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\mainMenaxherControl1.Designer.cs">
+      <DependentUpon>mainMenaxherControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\MatematikControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\MatematikControl1.Designer.cs">
+      <DependentUpon>MatematikControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\punonjesi\PunShowDataControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\punonjesi\PunShowDataControl1.Designer.cs">
+      <DependentUpon>PunShowDataControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\punonjesi\shfaqLexuesitControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\punonjesi\shfaqLexuesitControl1.Designer.cs">
+      <DependentUpon>shfaqLexuesitControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\punonjesi\shtoLexuesControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\punonjesi\shtoLexuesControl1.Designer.cs">
+      <DependentUpon>shtoLexuesControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\shfaqLibraMenaxheri.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\shfaqLibraMenaxheri.Designer.cs">
+      <DependentUpon>shfaqLibraMenaxheri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\ShfaqPunMenaxheri.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\ShfaqPunMenaxheri.Designer.cs">
+      <DependentUpon>ShfaqPunMenaxheri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\ShtoLiberMenaxher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\ShtoLiberMenaxher.Designer.cs">
+      <DependentUpon>ShtoLiberMenaxher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\ShtoPunonjesNgaMenaxheri.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\ShtoPunonjesNgaMenaxheri.Designer.cs">
+      <DependentUpon>ShtoPunonjesNgaMenaxheri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\TeknologjiControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\TeknologjiControl1.Designer.cs">
+      <DependentUpon>TeknologjiControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\teTjeraMenaxherControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\teTjeraMenaxherControl1.Designer.cs">
+      <DependentUpon>teTjeraMenaxherControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\ecuriaEKategorive.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ecuriaEKategorive.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\ecuriaELex.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ecuriaELex.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\kaluesTeAfatit.cs">
+      <DependentUpon>kaluesTeAfatit.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\kaluesTeAfatit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kaluesTeAfatit.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\LexueshmeriaELibrit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LexueshmeriaELibrit.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\LexueshmeriaTotale.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LexueshmeriaTotale.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\listLibrash.cs">
+      <DependentUpon>listLibrash.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\listLibrash.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listLibrash.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataset\ProvaTotal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProvaTotal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="formsReports\ecuriaEKategorise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsReports\ecuriaEKategorise.Designer.cs">
+      <DependentUpon>ecuriaEKategorise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formsReports\EcuriaELex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsReports\EcuriaELex.Designer.cs">
+      <DependentUpon>EcuriaELex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formsReports\ecuriaELeximitNJElib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsReports\ecuriaELeximitNJElib.Designer.cs">
+      <DependentUpon>ecuriaELeximitNJElib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formsReports\LExTotale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsReports\LExTotale.Designer.cs">
+      <DependentUpon>LExTotale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formsReports\LexueshmeriaLibrit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsReports\LexueshmeriaLibrit.Designer.cs">
+      <DependentUpon>LexueshmeriaLibrit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formsReports\LexuesQeKaneKaluarAfatin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsReports\LexuesQeKaneKaluarAfatin.Designer.cs">
+      <DependentUpon>LexuesQeKaneKaluarAfatin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formsReports\ListLibrashRaportFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsReports\ListLibrashRaportFrame.Designer.cs">
+      <DependentUpon>ListLibrashRaportFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formsReports\provaTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsReports\provaTotal.Designer.cs">
+      <DependentUpon>provaTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\afterLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\afterLogin.Designer.cs">
+      <DependentUpon>afterLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DorezoLiber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\DorezoLiber.Designer.cs">
+      <DependentUpon>DorezoLiber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\EDITO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\EDITO.Designer.cs">
+      <DependentUpon>EDITO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\EditoLexues.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\EditoLexues.Designer.cs">
+      <DependentUpon>EditoLexues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\EditoLiber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\EditoLiber.Designer.cs">
+      <DependentUpon>EditoLiber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\KlasiketControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\KlasiketControl1.Designer.cs">
+      <DependentUpon>KlasiketControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\HistorikuILibrit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\HistorikuILibrit.Designer.cs">
+      <DependentUpon>HistorikuILibrit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Lexues.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Lexues.Designer.cs">
+      <DependentUpon>Lexues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controllers\MainUserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controllers\MainUserControl1.Designer.cs">
+      <DependentUpon>MainUserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Menaxheri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Menaxheri.Designer.cs">
+      <DependentUpon>Menaxheri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Punonjes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Punonjes.Designer.cs">
+      <DependentUpon>Punonjes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ResetPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ResetPass.Designer.cs">
+      <DependentUpon>ResetPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\RezervoLiber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\RezervoLiber.Designer.cs">
+      <DependentUpon>RezervoLiber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\singleBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\singleBook.Designer.cs">
+      <DependentUpon>singleBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="controllers\ElektronikControl1.resx">
+      <DependentUpon>ElektronikControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\FizikControl1.resx">
+      <DependentUpon>FizikControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\KimiControl1.resx">
+      <DependentUpon>KimiControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\lexuesi\lexuesShowData.resx">
+      <DependentUpon>lexuesShowData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\lexuesi\showLibra.resx">
+      <DependentUpon>showLibra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\mainMenaxherControl1.resx">
+      <DependentUpon>mainMenaxherControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\MatematikControl1.resx">
+      <DependentUpon>MatematikControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\punonjesi\PunShowDataControl1.resx">
+      <DependentUpon>PunShowDataControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\punonjesi\shfaqLexuesitControl1.resx">
+      <DependentUpon>shfaqLexuesitControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\punonjesi\shtoLexuesControl1.resx">
+      <DependentUpon>shtoLexuesControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\shfaqLibraMenaxheri.resx">
+      <DependentUpon>shfaqLibraMenaxheri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\ShfaqPunMenaxheri.resx">
+      <DependentUpon>ShfaqPunMenaxheri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\ShtoLiberMenaxher.resx">
+      <DependentUpon>ShtoLiberMenaxher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\ShtoPunonjesNgaMenaxheri.resx">
+      <DependentUpon>ShtoPunonjesNgaMenaxheri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\TeknologjiControl1.resx">
+      <DependentUpon>TeknologjiControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\teTjeraMenaxherControl1.resx">
+      <DependentUpon>teTjeraMenaxherControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsReports\ecuriaEKategorise.resx">
+      <DependentUpon>ecuriaEKategorise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsReports\EcuriaELex.resx">
+      <DependentUpon>EcuriaELex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsReports\ecuriaELeximitNJElib.resx">
+      <DependentUpon>ecuriaELeximitNJElib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsReports\LExTotale.resx">
+      <DependentUpon>LExTotale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsReports\LexueshmeriaLibrit.resx">
+      <DependentUpon>LexueshmeriaLibrit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsReports\LexuesQeKaneKaluarAfatin.resx">
+      <DependentUpon>LexuesQeKaneKaluarAfatin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsReports\ListLibrashRaportFrame.resx">
+      <DependentUpon>ListLibrashRaportFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsReports\provaTotal.resx">
+      <DependentUpon>provaTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\afterLogin.resx">
+      <DependentUpon>afterLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DorezoLiber.resx">
+      <DependentUpon>DorezoLiber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\EDITO.resx">
+      <DependentUpon>EDITO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\EditoLexues.resx">
+      <DependentUpon>EditoLexues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\EditoLiber.resx">
+      <DependentUpon>EditoLiber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\KlasiketControl1.resx">
+      <DependentUpon>KlasiketControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\HistorikuILibrit.resx">
+      <DependentUpon>HistorikuILibrit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Lexues.resx">
+      <DependentUpon>Lexues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controllers\MainUserControl1.resx">
+      <DependentUpon>MainUserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Menaxheri.resx">
+      <DependentUpon>Menaxheri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Punonjes.resx">
+      <DependentUpon>Punonjes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ResetPass.resx">
+      <DependentUpon>ResetPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RezervoLiber.resx">
+      <DependentUpon>RezervoLiber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\singleBook.resx">
+      <DependentUpon>singleBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="reports\EcuriaEKategorive.rdlc" />
+    <EmbeddedResource Include="reports\kaluesTeAfatit.rdlc" />
+    <EmbeddedResource Include="reports\LexueshmeriaELibrit.rdlc" />
+    <EmbeddedResource Include="reports\provaTotal.rdlc" />
+    <EmbeddedResource Include="reports\Report1.rdlc" />
+    <EmbeddedResource Include="reports\LEXperNjeLib.rdlc" />
+    <EmbeddedResource Include="reports\ecuriaELEx.rdlc" />
+    <EmbeddedResource Include="reports\TOTAL.rdlc" />
+    <None Include="dataset\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\ecuriaEKategorive.xsc">
+      <DependentUpon>ecuriaEKategorive.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\ecuriaEKategorive.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ecuriaEKategorive.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\ecuriaEKategorive.xss">
+      <DependentUpon>ecuriaEKategorive.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\ecuriaELex.xsc">
+      <DependentUpon>ecuriaELex.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\ecuriaELex.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ecuriaELex.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\ecuriaELex.xss">
+      <DependentUpon>ecuriaELex.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\kaluesTeAfatit.xsc">
+      <DependentUpon>kaluesTeAfatit.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\kaluesTeAfatit.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>kaluesTeAfatit.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\kaluesTeAfatit.xss">
+      <DependentUpon>kaluesTeAfatit.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\LexueshmeriaELibrit.xsc">
+      <DependentUpon>LexueshmeriaELibrit.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\LexueshmeriaELibrit.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LexueshmeriaELibrit.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\LexueshmeriaELibrit.xss">
+      <DependentUpon>LexueshmeriaELibrit.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\LexueshmeriaTotale.xsc">
+      <DependentUpon>LexueshmeriaTotale.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\LexueshmeriaTotale.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LexueshmeriaTotale.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\LexueshmeriaTotale.xss">
+      <DependentUpon>LexueshmeriaTotale.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\listLibrash.xsc">
+      <DependentUpon>listLibrash.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\listLibrash.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>listLibrash.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\listLibrash.xss">
+      <DependentUpon>listLibrash.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\ProvaTotal.xsc">
+      <DependentUpon>ProvaTotal.xsd</DependentUpon>
+    </None>
+    <None Include="dataset\ProvaTotal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProvaTotal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataset\ProvaTotal.xss">
+      <DependentUpon>ProvaTotal.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="images\eye_30px.png" />
+    <Content Include="images\invisible_30px.png" />
+    <Content Include="images\library-logo-png-17.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
